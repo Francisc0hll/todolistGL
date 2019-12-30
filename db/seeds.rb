@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Task.destroy_all
+User.destroy_all
+activites = ["comer", "cocinar", "estudiar", "ir a comprar", "comprar regalos"]
+5.times{ |i| Task.create(title: "nombre #{i+1}", description: "descripcion #{activites[i]}")}

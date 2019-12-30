@@ -4,7 +4,11 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    if user_signed_in?
+      @todos = current_user.todos
+    else
+      @tasks = Task.all
+    end
   end
 
   # GET /tasks/1
